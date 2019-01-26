@@ -10,7 +10,10 @@ func _ready():
 	$VisitorSpawnTimer.start()
 	
 func find_door_path(from_pos):
-	return $VisitorNavigation.get_simple_path(from_pos, $Door.position, false) # get_position_in_parent())
+	return $VisitorNavigation.get_simple_path(from_pos, $Door.position, false)
+
+func find_path(from_pos, to_pos):
+	return $VisitorNavigation.get_simple_path(from_pos, to_pos, false)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

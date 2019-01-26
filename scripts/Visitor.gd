@@ -6,7 +6,7 @@ extends Area2D
 var current_area
 var screensize
 var visitorFollowPath
-var speed = 0.1
+export var speed = 100
 var is_paused = false
 
 func _ready():
@@ -25,15 +25,23 @@ func init_path():
 	visitorPath.curve = curve
 	add_child(visitorPath)
 	visitorFollowPath = PathFollow2D.new()
+	visitorFollowPath.loop = false
 	visitorPath.add_child(visitorFollowPath)
+
+func update_path(path):
+	var curve = Curve2D.new()
+	for point in path:
+		curve.add_point(point)
+	visitorFollowPath.get_parent().curve = curve
 	
 func _process(delta):
 	#print (current_area)
 	if not is_paused:
 		if (visitorFollowPath != null):
-			visitorFollowPath.unit_offset += speed * delta
+			visitorFollowPath.offset += speed * delta
 			self.position = visitorFollowPath.position
-			
+			if visitorFollowPath.unit_offset > 0.99:
+				queue_free()
 
 func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 	#print (area.name)
@@ -43,38 +51,47 @@ func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 		queue_free()
 	if ("Cup" in area.name):
 		get_node("/root/Main").inc_score()
-		queue_free()
+		var new_path = get_parent().get_parent().find_path(self.position, get_escape_point())
+		print (new_path)
+		update_path(new_path)
+		is_paused = false
+		visitorFollowPath.unit_offset = 0
+		area.queue_free()
+		#queue_free()
 	if ("WindowArea" in area.name):
 		if area != null:
 			current_area = area
 			current_area.register_visitor(self)
+
+func get_escape_point():
+	var min_x_dist = min(screensize.x - position.x, position.x)
+	var min_y_dist = min(screensize.y - position.y, position.y)
+	var escape_point;
+	if min_x_dist < min_y_dist:
+		var x_escape;
+		if screensize.x - position.x < position.x:
+			x_escape = screensize.x + 500
+		else:
+			x_escape = -500
+		escape_point = Vector2(x_escape, position.y)
+	else:
+		var y_escape;
+		if screensize.y - position.y < position.y:
+			y_escape = screensize.y + 500
+		else:
+			y_escape = -500
+		escape_point = Vector2(position.x, y_escape)
+	return escape_point
 
 func _on_Player_shout():
 	print (current_area)
 	if current_area != null:
 		if (current_area.is_active):
 			#print (position, screensize)
-			var min_x_dist = min(screensize.x - position.x, position.x)
-			var min_y_dist = min(screensize.y - position.y, position.y)
-			var escape_point;
-			if min_x_dist < min_y_dist:
-				var x_escape;
-				if screensize.x - position.x < position.x:
-					x_escape = screensize.x
-				else:
-					x_escape = 0
-				escape_point = Vector2(x_escape, position.y)
-			else:
-				var y_escape;
-				if screensize.y - position.y < position.y:
-					y_escape = screensize.y
-				else:
-					y_escape = 0
-				escape_point = Vector2(position.x, y_escape)	
+
 			#print (escape_point)
 			print ("visitor is surprised")
 			is_paused = true
-			
 
 func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):
 	if area != null:

@@ -14,9 +14,9 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 728.221, 91.6547, 1015.41, 12.3209, 1010.65, 124.975, 707.595, 494.67, 20.5638, 12.3209, 271.259, 98.0014, 15.8037, 600.978, 253.805, 502.604, 1020.17, 600.978 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 1, 0, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 8, 6, 7, 3 ), PoolIntArray( 2, 8, 3 ) ]
-outlines = [ PoolVector2Array( 20.5638, 12.3209, 1015.41, 12.3209, 1010.65, 124.975, 1020.17, 600.978, 15.8037, 600.978 ), PoolVector2Array( 271.259, 98.0014, 728.221, 91.6547, 707.595, 494.67, 253.805, 502.604 ) ]
+vertices = PoolVector2Array( 707.595, 494.67, 728.221, 91.6547, 1015.41, 12.3209, 1019.02, 145.051, 1020.45, 598.987, 20.5638, 12.3209, 271.259, 98.0014, 15.8037, 600.978, 253.805, 502.604 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 2, 1, 6 ), PoolIntArray( 7, 5, 6, 8 ), PoolIntArray( 4, 7, 8, 0 ) ]
+outlines = [ PoolVector2Array( 20.5638, 12.3209, 1015.41, 12.3209, 1019.02, 145.051, 1020.45, 598.987, 15.8037, 600.978 ), PoolVector2Array( 271.259, 98.0014, 728.221, 91.6547, 707.595, 494.67, 253.805, 502.604 ) ]
 
 [sub_resource type="Curve2D" id=2]
 
@@ -25,7 +25,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1023.8, 2.10187, 0, 0, 0, 0, -1.16455, 5.61804, 0, 0, 0, 0, 1023.8, 2.10187 )
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 Visitor = ExtResource( 2 )

@@ -25,6 +25,7 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
+speed = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
