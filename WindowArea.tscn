@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://WindowArea.gd" type="Script" id=1]
+[ext_resource path="res://Cup.tscn" type="PackedScene" id=2]
+
+[node name="WindowArea" type="Area2D"]
+
+rotation = -1.5708
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+Cup = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -18.5417, -72.6788, -81.8716, 164.859, 83.7502, 163.693, 28.0999, -73.8163 )
+
+[connection signal="body_entered" from="." to="." method="_on_WindowArea_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_WindowArea_body_exited"]
+
+
