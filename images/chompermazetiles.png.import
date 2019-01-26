@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chompermazetiles.png-ff0b74e330ba497e33f722d139acc17a.stex"
+path="res://.import/chompermazetiles.png-06ea9de41a0a0ab1905b021c82c05356.stex"
 
 [deps]
 
-source_file="res://chompermazetiles.png"
-dest_files=[ "res://.import/chompermazetiles.png-ff0b74e330ba497e33f722d139acc17a.stex" ]
+source_file="res://images/chompermazetiles.png"
+dest_files=[ "res://.import/chompermazetiles.png-06ea9de41a0a0ab1905b021c82c05356.stex" ]
 
 [params]
 

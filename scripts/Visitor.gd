@@ -20,13 +20,14 @@ func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 	print (area.name)
 	if (area.name == "Cup"):
 		queue_free()
-	else:
+	if ("WindowArea" in area.name):
 		current_area = area
 
 func _on_Player_shout():
-	#print (current_area.is_active)
-	if (current_area.is_active):
-		print ("visitor is surprised")
+	print (current_area)
+	if current_area != null:
+		if (current_area.is_active):
+			print ("visitor is surprised")
 
 
 func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):

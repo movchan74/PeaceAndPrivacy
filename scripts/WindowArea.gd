@@ -4,10 +4,7 @@ export (PackedScene) var Cup
 var is_active = false;
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	print (get_rid().get_id ())
-#	pass
+	pass
 
 func _process(delta):
 	if is_active and Input.is_action_just_pressed("ui_cancel"):
