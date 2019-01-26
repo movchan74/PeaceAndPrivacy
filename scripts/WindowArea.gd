@@ -13,13 +13,14 @@ func _process(delta):
 		var min_dist = 100000;
 		var closest_visitor;
 		for visitor in active_visitors:
-			if self.global_position.distance_to(visitor.global_position) < min_dist:
+			if self.global_position.distance_to(visitor.global_position) < min_dist and visitor.current_area != null:
 				closest_visitor = visitor
 				min_dist = self.global_position.distance_to(visitor.global_position)
 		var cup = Cup.instance()
 		if closest_visitor != null:
+			print (closest_visitor.is_paused)
 			var direction = (closest_visitor.global_position - self.global_position).normalized()
-			cup.velocity = direction
+			cup.init(direction, false)
 		add_child(cup)
 
 
