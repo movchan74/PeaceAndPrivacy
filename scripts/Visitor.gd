@@ -14,7 +14,7 @@ func _ready():
 	screensize = get_viewport_rect().size
 
 func get_door_path():
-	return get_parent().find_door_path(self.position) # get_pos())
+	return get_parent().get_parent().find_door_path(self.position) # get_pos())
 	
 func init_path():
 	var path = get_door_path()
@@ -37,7 +37,12 @@ func _process(delta):
 
 func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 	#print (area.name)
+	if ("Door" == area.name):
+		get_node("/root/Main").game_over()
+		print ("Game over!")
+		queue_free()
 	if ("Cup" in area.name):
+		get_node("/root/Main").inc_score()
 		queue_free()
 	if ("WindowArea" in area.name):
 		if area != null:
