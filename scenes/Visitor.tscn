@@ -10,7 +10,7 @@ blend_mode = 0
 light_mode = 0
 _sections_unfolded = [ "Resource" ]
 
-[node name="Visitor" type="Area2D" index="0"]
+[node name="Visitor" type="Area2D"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = true

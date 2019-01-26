@@ -32,19 +32,21 @@ func _process(delta):
 		if (visitorFollowPath != null):
 			visitorFollowPath.unit_offset += speed * delta
 			self.position = visitorFollowPath.position
+			
 
 func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
-	print (area.name)
+	#print (area.name)
 	if ("Cup" in area.name):
 		queue_free()
 	if ("WindowArea" in area.name):
 		current_area = area
+		current_area.register_visitor(self)
 
 func _on_Player_shout():
-	print (current_area)
+	#print (current_area)
 	if current_area != null:
 		if (current_area.is_active):
-			print (position, screensize)
+			#print (position, screensize)
 			var min_x_dist = min(screensize.x - position.x, position.x)
 			var min_y_dist = min(screensize.y - position.y, position.y)
 			var escape_point;
@@ -62,10 +64,14 @@ func _on_Player_shout():
 				else:
 					y_escape = 0
 				escape_point = Vector2(position.x, y_escape)	
-			print (escape_point)
+			#print (escape_point)
 			print ("visitor is surprised")
 			is_paused = true
 			
 
 func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):
-	current_area = null
+	if area != null:
+		if ("WindowArea" in area.name):
+			if current_area != null:
+				current_area.unregister_visitor(self)
+			current_area = null

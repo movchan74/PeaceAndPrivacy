@@ -1,6 +1,7 @@
 extends Area2D
 
 export (int) var speed
+var velocity = Vector2(0, 1)
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -8,8 +9,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	var velocity = Vector2(0, 1)
-	position += velocity * delta * speed
+	global_position += velocity * delta * speed
 #	position.x
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
