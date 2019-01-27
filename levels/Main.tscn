@@ -19,31 +19,31 @@
 [ext_resource path="res://audio/Sci_Fi_Swamp_Chase.wav" type="AudioStream" id=17]
 [ext_resource path="res://audio/door_bell.wav" type="AudioStream" id=18]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0
 blend_mode = 0
 light_mode = 0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=3]
 
 vertices = PoolVector2Array( 707.595, 494.67, 728.221, 91.6547, 1015.41, 12.3209, 1019.02, 145.051, 1020.45, 598.987, 20.5638, 12.3209, 271.259, 98.0014, 15.8037, 600.978, 253.805, 502.604 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 2, 1, 6 ), PoolIntArray( 7, 5, 6, 8 ), PoolIntArray( 4, 7, 8, 0 ) ]
 outlines = [ PoolVector2Array( 20.5638, 12.3209, 1015.41, 12.3209, 1019.02, 145.051, 1020.45, 598.987, 15.8037, 600.978 ), PoolVector2Array( 271.259, 98.0014, 728.221, 91.6547, 707.595, 494.67, 253.805, 502.604 ) ]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=4]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1023.8, 2.10187, 0, 0, 0, 0, -1.16455, 5.61804, 0, 0, 0, 0, 1023.8, 2.10187 )
 }
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 Visitor = ExtResource( 2 )
@@ -61,7 +61,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="background-trees" type="Sprite" parent="." index="2"]
 
 self_modulate = Color( 1, 1, 1, 0.784549 )
-material = SubResource( 4 )
+material = SubResource( 1 )
 position = Vector2( -10, 0 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 4 )
@@ -221,7 +221,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="0"]
 
 scale = Vector2( 2.30447, 0.682807 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="VisitorNavigation" type="Navigation2D" parent="." index="7"]
@@ -231,13 +231,13 @@ visible = false
 [node name="VisitorNavigationPolygon" type="NavigationPolygonInstance" parent="VisitorNavigation" index="0"]
 
 position = Vector2( 0, -0.949997 )
-navpoly = SubResource( 2 )
+navpoly = SubResource( 3 )
 enabled = true
 
 [node name="VisitorSpawnPath" type="Path2D" parent="." index="8"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 3 )
+curve = SubResource( 4 )
 
 [node name="VisitorSpawnLocation" type="PathFollow2D" parent="VisitorSpawnPath" index="0"]
 

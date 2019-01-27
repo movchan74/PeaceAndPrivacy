@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=2]
 
-[ext_resource path="res://images/characters/visitor01-04.png" type="Texture" id=1]
-[ext_resource path="res://images/characters/visitor01-02.png" type="Texture" id=2]
+[ext_resource path="res://images/characters/visitor3.png" type="Texture" id=1]
+[ext_resource path="res://images/characters/visitor3sad.png" type="Texture" id=2]
 
 [resource]
 

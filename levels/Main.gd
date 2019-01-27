@@ -31,10 +31,11 @@ func _on_VisitorSpawnTimer_timeout():
 	visitor.position = visitor_position
 	visitor.init_path()
 	
-func game_over():
+func game_over(text):
 	$BackgroundMusic.stop()
 	$DoorBell.play()
 	get_tree().paused = true
+	$HUD/GameOver.text = text
 	$HUD/GameOver.show()
 	$HUD/RestartGame.show()
 	

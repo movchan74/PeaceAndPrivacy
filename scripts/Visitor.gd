@@ -7,12 +7,18 @@ var current_area
 var screensize
 var visitorFollowPath
 export var speed = 100
+export (Array) var variations
+export (Array) var variations_text
 var is_paused = false
+var text
 
 func _ready():
 	get_node("/root/Main/Player").connect("shout", self, "_on_Player_shout")
 	screensize = get_viewport_rect().size
 	$Sprite/AnimationPlayer.play("walk_wiggle")
+	var i = randi() % variations.size()
+	$Sprite.frames = variations[i]
+	text = variations_text[i]
 
 func get_door_path():
 	return get_parent().get_parent().find_door_path(self.position) # get_pos())
@@ -47,7 +53,7 @@ func _process(delta):
 func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 	#print (area.name)
 	if ("Door" == area.name):
-		get_node("/root/Main").game_over()
+		get_node("/root/Main").game_over(text)
 		print ("Game over!")
 		queue_free()
 	if ("Cup" in area.name):
