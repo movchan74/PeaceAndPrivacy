@@ -50,6 +50,7 @@ func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 		print ("Game over!")
 		queue_free()
 	if ("Cup" in area.name):
+		$GroanSound.play()
 		get_node("/root/Main").inc_score()
 		var new_path = get_parent().get_parent().find_path(self.position, get_escape_point())
 		print (new_path)

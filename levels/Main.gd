@@ -31,6 +31,8 @@ func _on_VisitorSpawnTimer_timeout():
 	visitor.init_path()
 	
 func game_over():
+	$BackgroundMusic.stop()
+	$DoorBell.play()
 	get_tree().paused = true
 	$HUD/GameOver.show()
 	$HUD/RestartGame.show()
@@ -40,6 +42,7 @@ func update_score_label():
 	
 func restart_game():
 	print ("restart")
+	$BackgroundMusic.play()
 	score = 0
 	update_score_label()
 	$HUD/GameOver.hide()

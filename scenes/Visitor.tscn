@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Visitor.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://audio/groan_2.wav" type="AudioStream" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -38,15 +39,14 @@ _sections_unfolded = [ "Material" ]
 build_mode = 0
 polygon = PoolVector2Array( -25.9161, -32.3863, 29.0114, -28.7929, 25.4181, 29.7281, -28.4828, 30.2414 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="." index="2"]
+[node name="GroanSound" type="AudioStreamPlayer" parent="." index="2"]
 
-offset = 0.0
-h_offset = 0.0
-v_offset = 0.0
-rotate = true
-cubic_interp = true
-loop = true
-lookahead = 4.0
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_shape_entered" from="." to="." method="_on_Visitor_area_shape_entered"]
 

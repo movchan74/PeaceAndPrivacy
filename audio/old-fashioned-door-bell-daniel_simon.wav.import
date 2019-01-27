@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/old-fashioned-door-bell-daniel_simon.wav-d7df56d8b03bf9da72eb8aab8b1922cc.sample"
+
+[deps]
+
+source_file="res://audio/old-fashioned-door-bell-daniel_simon.wav"
+dest_files=[ "res://.import/old-fashioned-door-bell-daniel_simon.wav-d7df56d8b03bf9da72eb8aab8b1922cc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
