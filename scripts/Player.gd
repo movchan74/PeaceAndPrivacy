@@ -33,6 +33,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shout"):
 		emit_signal("shout")
 		$Sprite.play("shout")
+		$GoAway.play()
 		$Sprite/AnimationPlayer.play("shout_wiggle")
 		$ShoutTimer.start()
 		is_shouting = true

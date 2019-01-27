@@ -17,7 +17,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://audio/Sci_Fi_Swamp_Chase.wav" type="AudioStream" id=17]
-[ext_resource path="res://audio/old-fashioned-door-bell-daniel_simon.wav" type="AudioStream" id=18]
+[ext_resource path="res://audio/door_bell.wav" type="AudioStream" id=18]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 
@@ -205,7 +205,7 @@ autostart = true
 
 [node name="Door" type="Area2D" parent="." index="6"]
 
-position = Vector2( 393.061, 484.037 )
+position = Vector2( 473.861, 479.152 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -214,10 +214,12 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="0"]
 
-position = Vector2( 76.9793, 3.05176e-05 )
 scale = Vector2( 2.30447, 0.682807 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]

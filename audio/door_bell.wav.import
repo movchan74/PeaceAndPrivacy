@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/door_bell.wav-b7a008121b7fea34f7c4aefd8ab8eb7a.sample"
+
+[deps]
+
+source_file="res://audio/door_bell.wav"
+dest_files=[ "res://.import/door_bell.wav-b7a008121b7fea34f7c4aefd8ab8eb7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
