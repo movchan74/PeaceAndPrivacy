@@ -30,7 +30,7 @@ func _process(delta):
 			$Sprite.play("idle")
 			$Sprite/AnimationPlayer.play("idle")
 		
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("shout"):
 		emit_signal("shout")
 		$Sprite.play("shout")
 		$Sprite/AnimationPlayer.play("shout_wiggle")

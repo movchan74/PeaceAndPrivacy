@@ -9,7 +9,7 @@ func _ready():
 	get_node("/root/Main/Player").connect("shout", self, "_on_Player_shout")
 
 func _process(delta):
-	if is_active and can_throw and Input.is_action_just_pressed("ui_cancel"):
+	if is_active and can_throw and Input.is_action_just_pressed("throw"):
 		print (active_visitors)
 		var min_dist = 100000;
 		var closest_visitor;
