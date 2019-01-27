@@ -6,7 +6,7 @@ var active_visitors = []
 var can_throw = true
 
 func _ready():
-	pass
+	get_node("/root/Main/Player").connect("shout", self, "_on_Player_shout")
 
 func _process(delta):
 	if is_active and can_throw and Input.is_action_just_pressed("ui_cancel"):
@@ -45,3 +45,8 @@ func unregister_visitor(visitor):
 
 func _on_CupThrowTimer_timeout():
 	can_throw = true
+	
+func _on_Player_shout():
+	if is_active:
+		$Wave/AnimatedSprite.frame = 0
+		$Wave/AnimatedSprite.play("default")

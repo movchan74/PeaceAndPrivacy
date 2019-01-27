@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/WindowArea.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Cup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Wave.tscn" type="PackedScene" id=3]
 
 [node name="WindowArea" type="Area2D"]
 
@@ -31,6 +32,13 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="Wave" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 0.284564, 314.311 )
+rotation = 3.14159
+scale = Vector2( 5.82366, 7.05981 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_WindowArea_body_entered"]
 

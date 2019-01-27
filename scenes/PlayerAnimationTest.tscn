@@ -107,4 +107,8 @@ anims/walk_wiggle = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="1"]
+
+animation = "default"
+
 

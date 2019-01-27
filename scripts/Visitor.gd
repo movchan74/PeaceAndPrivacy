@@ -12,6 +12,7 @@ var is_paused = false
 func _ready():
 	get_node("/root/Main/Player").connect("shout", self, "_on_Player_shout")
 	screensize = get_viewport_rect().size
+	$Sprite/AnimationPlayer.play("walk_wiggle")
 
 func get_door_path():
 	return get_parent().get_parent().find_door_path(self.position) # get_pos())
@@ -58,6 +59,8 @@ func _on_Visitor_area_shape_entered(area_id, area, area_shape, self_shape):
 		is_paused = false
 		visitorFollowPath.unit_offset = 0
 		area.queue_free()
+		$Sprite.play("hit")
+		$Sprite/AnimationPlayer.play("walk_wiggle")
 		#queue_free()
 	if ("WindowArea" in area.name):
 		if area != null:
@@ -88,12 +91,9 @@ func _on_Player_shout():
 	print (current_area)
 	if current_area != null:
 		if (current_area.is_active):
-			#print (position, screensize)
-
-			#print (escape_point)
-			print ("visitor is surprised")
 			is_paused = true
 			$PausedTimer.start()
+			$Sprite/AnimationPlayer.play("idle")
 			
 
 func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):
@@ -104,3 +104,4 @@ func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):
 
 func _on_PausedTimer_timeout():
 	is_paused = false
+	$Sprite/AnimationPlayer.play("walk_wiggle")
