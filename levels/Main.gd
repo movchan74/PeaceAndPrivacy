@@ -7,6 +7,7 @@ var score = 0
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	randomize()
 	$VisitorSpawnTimer.start()
 	
 func find_door_path(from_pos):
