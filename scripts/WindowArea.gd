@@ -1,6 +1,7 @@
 extends Area2D
 
 export (PackedScene) var Cup
+export (PackedScene) var Plant
 var is_active = false
 var active_visitors = []
 var can_throw = true
@@ -17,7 +18,11 @@ func _process(delta):
 			if self.global_position.distance_to(visitor.global_position) < min_dist and visitor.current_area != null:
 				closest_visitor = visitor
 				min_dist = self.global_position.distance_to(visitor.global_position)
-		var cup = Cup.instance()
+		var cup;
+		if randf() > 0.5:
+			cup = Cup.instance()
+		else:
+			cup = Plant.instance()
 		if closest_visitor != null:
 			print (closest_visitor.is_paused)
 			var direction = (closest_visitor.global_position - self.global_position).normalized()

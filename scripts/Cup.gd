@@ -10,6 +10,7 @@ func init(v, l):
 
 func _ready():
 	$ThrowSound.play()
+	$AnimationPlayer.play("rotate")
 
 func _process(delta):
 	if is_local:

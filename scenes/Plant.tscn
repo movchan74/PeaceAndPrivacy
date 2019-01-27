@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Cup.gd" type="Script" id=1]
-[ext_resource path="res://images/weapons-18.png" type="Texture" id=2]
+[ext_resource path="res://images/weapons-17.png" type="Texture" id=2]
 [ext_resource path="res://audio/throw_1.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 0.0, 180.0, 360.0 ]
 }
 
-[node name="Cup" type="Area2D"]
+[node name="Cup" type="Area2D" index="0"]
 
 position = Vector2( 0.244171, 0.122086 )
 scale = Vector2( 2, 2 )
@@ -41,8 +41,8 @@ speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-rotation = 0.85768
-scale = Vector2( 0.8, 0.8 )
+rotation = 5.78427
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -66,7 +66,7 @@ root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 0.5
 anims/rotate = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
