@@ -41,7 +41,7 @@ speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-rotation = 0.85768
+rotation = 4.49572
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -49,7 +49,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( -1.55105, -1.33518, 1.80633, -1.45727, 1.80633, 1.65594, -1.55105, 1.53385 )
+polygon = PoolVector2Array( -7.38306, -5.79644, 7.87337, -7.87686, 6.07034, 7.37957, -7.79914, 8.35043 )
 
 [node name="ThrowSound" type="AudioStreamPlayer" parent="." index="2"]
 

@@ -19,9 +19,13 @@ func _process(delta):
 		var closest_visitor;
 		
 		for visitor in active_visitors:
-			if self.global_position.distance_to(visitor.global_position) < min_dist and visitor.current_area != null:
-				closest_visitor = visitor
-				min_dist = self.global_position.distance_to(visitor.global_position)
+	#		if !weakref(visitor).get_ref():
+			#if is_instance_valid(visitor) and visitor != null:
+			if str(visitor)!="[Deleted Object]":
+				print (visitor)
+				if self.global_position.distance_to(visitor.global_position) < min_dist and visitor.current_area != null:
+					closest_visitor = visitor
+					min_dist = self.global_position.distance_to(visitor.global_position)
 		var cup;
 		if randf() > 0.5:
 			cup = Cup.instance()

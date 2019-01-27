@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Plant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Wave.tscn" type="PackedScene" id=4]
 
-[node name="WindowArea" type="Area2D" index="0"]
+[node name="WindowArea" type="Area2D"]
 
 position = Vector2( 4.42603, 0 )
 rotation = -1.5708
