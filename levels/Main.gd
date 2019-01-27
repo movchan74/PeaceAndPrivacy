@@ -1,7 +1,8 @@
 extends Node2D
 
 export (PackedScene) var Visitor
-
+export var min_spawn_time = 2.0
+export var max_spawn_time = 5.0
 var score = 0
 
 func _ready():
@@ -30,6 +31,8 @@ func _on_VisitorSpawnTimer_timeout():
 	var visitor_position = $VisitorSpawnPath/VisitorSpawnLocation.position
 	visitor.position = visitor_position
 	visitor.init_path()
+	$VisitorSpawnTimer.wait_time = randf()*(max_spawn_time-min_spawn_time)+min_spawn_time
+	$VisitorSpawnTimer.start()
 	
 func game_over(text):
 	$BackgroundMusic.stop()

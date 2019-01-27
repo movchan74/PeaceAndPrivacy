@@ -24,7 +24,7 @@ Cup = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( -18.5417, -72.6788, -191.997, 662.247, 138.249, 655.773, 28.0999, -73.8163 )
+polygon = PoolVector2Array( -63.9998, -64.0002, -192.002, 671.999, 175.998, 672.001, 64.0002, -63.9998 )
 
 [node name="CupThrowTimer" type="Timer" parent="." index="1"]
 
@@ -35,9 +35,9 @@ autostart = false
 
 [node name="Wave" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 0.284564, 314.311 )
+position = Vector2( 0, 312.553 )
 rotation = 3.14159
-scale = Vector2( 5.82366, 7.05981 )
+scale = Vector2( 2.82942, 7.11474 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_WindowArea_body_entered"]

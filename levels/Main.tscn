@@ -47,6 +47,8 @@ _data = {
 
 script = ExtResource( 1 )
 Visitor = ExtResource( 2 )
+min_spawn_time = 2.0
+max_spawn_time = 5.0
 
 [node name="background" type="Sprite" parent="." index="0"]
 
@@ -116,78 +118,73 @@ rotation = 0.0
 position = Vector2( -1935.83, 639.171 )
 rotation = 1.5708
 
-[node name="WindowArea6" parent="TileMap" index="6" instance=ExtResource( 6 )]
-
-position = Vector2( -2953.04, 844.773 )
-rotation = 1.5708
-
-[node name="WindowArea7" parent="TileMap" index="7" instance=ExtResource( 6 )]
+[node name="WindowArea7" parent="TileMap" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( -1934.71, 191.471 )
 rotation = 1.5708
 
-[node name="WindowArea8" parent="TileMap" index="8" instance=ExtResource( 6 )]
+[node name="WindowArea8" parent="TileMap" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( -1790.59, 80.1322 )
 rotation = 3.14159
 
-[node name="WindowArea9" parent="TileMap" index="9" instance=ExtResource( 6 )]
+[node name="WindowArea9" parent="TileMap" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( -1279.29, 78.9794 )
 rotation = 3.14159
 
-[node name="Furniture" parent="TileMap" index="10" instance=ExtResource( 7 )]
+[node name="Furniture" parent="TileMap" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( -1688.62, 169.522 )
 rotation = 1.5708
 
-[node name="Furniture2" parent="TileMap" index="11" instance=ExtResource( 7 )]
+[node name="Furniture2" parent="TileMap" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( -1875.79, 262.135 )
 rotation = 1.5708
 scale = Vector2( 0.341569, 1 )
 
-[node name="Furniture3" parent="TileMap" index="12" instance=ExtResource( 8 )]
+[node name="Furniture3" parent="TileMap" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( -1881.01, 488.268 )
 
-[node name="Furniture5" parent="TileMap" index="13" instance=ExtResource( 9 )]
+[node name="Furniture5" parent="TileMap" index="12" instance=ExtResource( 9 )]
 
 position = Vector2( -1697.79, 742.047 )
 scale = Vector2( 1.48462, 1.55514 )
 
-[node name="Furniture9" parent="TileMap" index="14" instance=ExtResource( 10 )]
+[node name="Furniture9" parent="TileMap" index="13" instance=ExtResource( 10 )]
 
 position = Vector2( -1250.04, 472.39 )
 
-[node name="Furniture4" parent="TileMap" index="15" instance=ExtResource( 11 )]
+[node name="Furniture4" parent="TileMap" index="14" instance=ExtResource( 11 )]
 
 position = Vector2( -1690.74, 358.921 )
 rotation = 1.5708
 
-[node name="Furniture10" parent="TileMap" index="16" instance=ExtResource( 12 )]
+[node name="Furniture10" parent="TileMap" index="15" instance=ExtResource( 12 )]
 
 position = Vector2( -1269.36, 411.171 )
 
-[node name="Furniture6" parent="TileMap" index="17" instance=ExtResource( 13 )]
+[node name="Furniture6" parent="TileMap" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( -1395.14, 559.711 )
 
-[node name="Furniture7" parent="TileMap" index="18" instance=ExtResource( 14 )]
+[node name="Furniture7" parent="TileMap" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( -1413.99, 752.049 )
 
-[node name="Furniture11" parent="TileMap" index="19" instance=ExtResource( 14 )]
+[node name="Furniture11" parent="TileMap" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( -1336.05, 414.564 )
 scale = Vector2( 0.311312, 0.470117 )
 
-[node name="Furniture12" parent="TileMap" index="20" instance=ExtResource( 14 )]
+[node name="Furniture12" parent="TileMap" index="19" instance=ExtResource( 14 )]
 
 position = Vector2( -1315.16, 456.188 )
 scale = Vector2( 0.311312, 0.470117 )
 
-[node name="Furniture8" parent="TileMap" index="21" instance=ExtResource( 14 )]
+[node name="Furniture8" parent="TileMap" index="20" instance=ExtResource( 14 )]
 
 position = Vector2( -1180.79, 751.294 )
 
@@ -200,7 +197,7 @@ speed = 3
 
 process_mode = 1
 wait_time = 3.0
-one_shot = false
+one_shot = true
 autostart = true
 
 [node name="Door" type="Area2D" parent="." index="6"]
