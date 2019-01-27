@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/WindowArea.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Cup.tscn" type="PackedScene" id=2]
 
-[node name="WindowArea" type="Area2D"]
+[node name="WindowArea" type="Area2D" index="0"]
 
 rotation = -1.5708
 input_pickable = true
@@ -25,8 +25,17 @@ Cup = ExtResource( 2 )
 build_mode = 0
 polygon = PoolVector2Array( -18.5417, -72.6788, -191.997, 662.247, 138.249, 655.773, 28.0999, -73.8163 )
 
+[node name="CupThrowTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="body_entered" from="." to="." method="_on_WindowArea_body_entered"]
 
 [connection signal="body_exited" from="." to="." method="_on_WindowArea_body_exited"]
+
+[connection signal="timeout" from="CupThrowTimer" to="." method="_on_CupThrowTimer_timeout"]
 
 

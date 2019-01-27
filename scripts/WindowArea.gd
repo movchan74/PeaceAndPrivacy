@@ -3,12 +3,13 @@ extends Area2D
 export (PackedScene) var Cup
 var is_active = false
 var active_visitors = []
+var can_throw = true
 
 func _ready():
 	pass
 
 func _process(delta):
-	if is_active and Input.is_action_just_pressed("ui_cancel"):
+	if is_active and can_throw and Input.is_action_just_pressed("ui_cancel"):
 		print (active_visitors)
 		var min_dist = 100000;
 		var closest_visitor;
@@ -22,6 +23,8 @@ func _process(delta):
 			var direction = (closest_visitor.global_position - self.global_position).normalized()
 			cup.init(direction, false)
 		add_child(cup)
+		can_throw = false
+		$CupThrowTimer.start()
 
 
 func _on_WindowArea_body_entered(body):
@@ -39,3 +42,6 @@ func register_visitor(visitor):
 
 func unregister_visitor(visitor):
 	active_visitors.erase(visitor)
+
+func _on_CupThrowTimer_timeout():
+	can_throw = true

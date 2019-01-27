@@ -48,8 +48,17 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="PausedTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [connection signal="area_shape_entered" from="." to="." method="_on_Visitor_area_shape_entered"]
 
 [connection signal="area_shape_exited" from="." to="." method="_on_Visitor_area_shape_exited"]
+
+[connection signal="timeout" from="PausedTimer" to="." method="_on_PausedTimer_timeout"]
 
 

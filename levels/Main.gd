@@ -42,6 +42,7 @@ func update_score_label():
 	
 func restart_game():
 	print ("restart")
+	$DoorBell.stop()
 	$BackgroundMusic.play()
 	score = 0
 	update_score_label()

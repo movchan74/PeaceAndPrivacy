@@ -93,9 +93,14 @@ func _on_Player_shout():
 			#print (escape_point)
 			print ("visitor is surprised")
 			is_paused = true
+			$PausedTimer.start()
+			
 
 func _on_Visitor_area_shape_exited(area_id, area, area_shape, self_shape):
 	if area != null:
 		if ("WindowArea" in area.name) and current_area != null:
 			current_area.unregister_visitor(self)
 			current_area = null
+
+func _on_PausedTimer_timeout():
+	is_paused = false
