@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Cup.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://images/weapons-18.png" type="Texture" id=2]
 [ext_resource path="res://audio/throw_1.wav" type="AudioStream" id=3]
 
 [node name="Cup" type="Area2D"]
 
+position = Vector2( 0.244171, 0.122086 )
+scale = Vector2( 2, 2 )
 z_index = 10
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -20,14 +22,14 @@ speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( -3.11142, -2.46163, 2.59796, -2.66554, 2.39406, 2.22822, -2.09189, 3.04385 )
+polygon = PoolVector2Array( -1.55105, -1.33518, 1.80633, -1.45727, 1.80633, 1.65594, -1.55105, 1.53385 )
 
 [node name="ThrowSound" type="AudioStreamPlayer" parent="." index="2"]
 

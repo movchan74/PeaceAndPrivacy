@@ -14,14 +14,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "shout",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -64,12 +64,12 @@ tracks/0/keys = {
 "values": [ 0.0, 10.0, 0.0, -10.0, 0.0 ]
 }
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 32.0054
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 input_pickable = false
@@ -112,12 +112,12 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="ShoutTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 1.0
 one_shot = false
 autostart = false
 

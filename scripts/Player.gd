@@ -30,7 +30,7 @@ func _process(delta):
 			$Sprite.play("idle")
 			$Sprite/AnimationPlayer.play("idle")
 		
-	if Input.is_action_just_pressed("shout"):
+	if Input.is_action_just_pressed("shout") and not is_shouting:
 		emit_signal("shout")
 		$Sprite.play("shout")
 		$GoAway.play()
