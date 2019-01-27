@@ -9,6 +9,7 @@ var visitorFollowPath
 export var speed = 100
 export (Array) var variations
 export (Array) var variations_text
+export (Array) var variations_sound
 var is_paused = false
 var text
 

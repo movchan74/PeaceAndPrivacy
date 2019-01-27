@@ -5,8 +5,9 @@
 [ext_resource path="res://scenes/Plant.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Wave.tscn" type="PackedScene" id=4]
 
-[node name="WindowArea" type="Area2D"]
+[node name="WindowArea" type="Area2D" index="0"]
 
+position = Vector2( 4.42603, 0 )
 rotation = -1.5708
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -32,10 +33,9 @@ autostart = false
 
 [node name="Wave" parent="." index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 0, 312.553 )
-rotation = 3.14159
-scale = Vector2( 2.82942, 7.11474 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -10, 250 )
+rotation = -1.5708
+scale = Vector2( 0.842727, 0.708761 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
 

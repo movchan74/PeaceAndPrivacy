@@ -53,6 +53,8 @@ func restart_game():
 	update_score_label()
 	$HUD/GameOver.hide()
 	$HUD/RestartGame.hide()
+	for child in $TileMap/WindowAreas.get_children():
+		child.restart()
 	for child in $Visitors.get_children():
 		child.queue_free()
 	get_tree().paused = false

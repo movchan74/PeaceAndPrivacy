@@ -9,11 +9,15 @@ var can_throw = true
 func _ready():
 	get_node("/root/Main/Player").connect("shout", self, "_on_Player_shout")
 
+func restart():
+	active_visitors = []
+
 func _process(delta):
 	if is_active and can_throw and Input.is_action_just_pressed("throw"):
 		print (active_visitors)
 		var min_dist = 100000;
 		var closest_visitor;
+		
 		for visitor in active_visitors:
 			if self.global_position.distance_to(visitor.global_position) < min_dist and visitor.current_area != null:
 				closest_visitor = visitor
